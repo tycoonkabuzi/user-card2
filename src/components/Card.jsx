@@ -16,7 +16,7 @@ const CardContainer = styled.div`
   }
 `;
 const Title = styled.div`
-  background-color: #6e4e4e;
+  background-color: ${(props) => (props.isHighlighted ? "#aa1010" : "#3b3b3b")};
   padding: 20px;
   font-size: large;
   font-weight: 600;
@@ -29,7 +29,7 @@ const Card = ({ users }) => {
     <Main>
       {users.map((user, index) => (
         <CardContainer key={index}>
-          <Title>
+          <Title isHighlighted={user.isHighlighted}>
             <p>Name: {user.name} </p>
             <p>Surname: {user.surname} </p>
           </Title>

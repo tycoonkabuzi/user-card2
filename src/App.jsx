@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Card from "./components/Card";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const users = [
+    {
+      name: "Tycoon",
+      surname: "Kabuzi",
+      description:
+        "  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum architecto aliquid quod necessitatibus ea dolore, ad laborum natus itaque officiis suscipit, nobis quos, vitae eveniet obcaecati deserunt repellat! Excepturi, molestias. ",
+      isHighlighted: true,
+    },
+    {
+      name: "Reed",
+      surname: "Johns",
+      description:
+        "   Sit amet consectetur adipisicing elit. Dolorum architecto aliquid quod necessitatibus ea dolore, ad laborum natus itaque officiis suscipit, nobis quos, vitae eveniet obcaecati deserunt repellat! Excepturi, molestias. ",
+      isHighlighted: false,
+    },
 
+    {
+      name: "Paul",
+      surname: "Kagame",
+      description:
+        " Laborum natus itaque officiis suscipi Loctetur adipisicing elit. Dolorum architecto aliquid quod necessitatibus ea dolore, ad laborum natus itaque officiis suscipit, nobis quos, vitae eveniet obcaecati deserunt repellat! Excepturi, molestias. ",
+      isHighlighted: true,
+    },
+  ];
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Card users={users} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
